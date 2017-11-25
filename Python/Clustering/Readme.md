@@ -4,12 +4,12 @@
 
 * Clustering_Dcouments
 
-* IRIS_Clustering
+* IRIS_Clustering_Kmean
 
-* Kmeans_pitfalls
+* Pitfalls_Kmean
 
-* Simple_Clustering
+* Simple_Clustering_Kmean
 
-* Simple_Clustering_1
+* Simple_Clustering_Kmean_1
 
 
