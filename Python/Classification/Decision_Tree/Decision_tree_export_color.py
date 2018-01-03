@@ -3,6 +3,9 @@ from sklearn.datasets import load_iris
 from sklearn import tree
 import collections
 
+import os
+os.environ["PATH"] += os.pathsep + 'C:/Program Files (x86)/Graphviz2.38/bin/'
+
 clf = tree.DecisionTreeClassifier(random_state=42)
 iris = load_iris()
 
@@ -28,3 +31,4 @@ for edge in edges:
         dest.set_fillcolor(colors[i])
 
 graph.write_png('tree.png')
+graph.write_svg('tree.svg')

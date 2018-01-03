@@ -4,6 +4,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import accuracy_score
 from sklearn import tree
+import os
+os.environ["PATH"] += os.pathsep + 'C:/Program Files (x86)/Graphviz2.38/bin/'
 
 
 
@@ -13,8 +15,8 @@ balance_data = pd.read_csv(
 
 
 
-print "Dataset Lenght:: ", len(balance_data)
-print "Dataset Shape:: ", balance_data.shape
+print("Dataset Lenght:: ", len(balance_data))
+print ("Dataset Shape:: ", balance_data.shape)
 
 
 
@@ -43,21 +45,21 @@ clf_entropy = DecisionTreeClassifier(criterion = "entropy", random_state = 100,
 clf_entropy.fit(X_train, y_train)
 
 
-print clf_gini.predict([[4, 4, 3, 3]])
+print (clf_gini.predict([[4, 4, 3, 3]]))
 
 y_pred = clf_gini.predict(X_test)
-print y_pred
+print( y_pred)
 
 
 
 
 y_pred_en = clf_entropy.predict(X_test)
-print y_pred_en
+print( y_pred_en)
 
-print "Accuracy is ", accuracy_score(y_test, y_pred) * 100
+print( "Accuracy is ", accuracy_score(y_test, y_pred) * 100)
 
 
-print "Accuracy is ", accuracy_score(y_test,y_pred_en)*100
+print ("Accuracy is ", accuracy_score(y_test,y_pred_en)*100)
 
 tree.export_graphviz(clf_gini,  out_file='tree.dot')
 
