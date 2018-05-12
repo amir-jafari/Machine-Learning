@@ -10,6 +10,13 @@
 # ------------------------------------------------------------
 # -----------------------Probablity --------------------------
 # ------------------------------------------------------------
+
+# Un-Comment the following line if you are running remote pycharm.
+# Comment the following line if you are running normal pycharm
+# import matplotlib
+# matplotlib.use('TkAgg')
+
+
 import matplotlib.pyplot as plt
 import random
 # ------------------------------------------------------------

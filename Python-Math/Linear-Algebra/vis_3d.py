@@ -11,6 +11,10 @@
 # ------------------------------------------------------------
 # -------------Linear Algebra --------------------------------
 # ------------------------------------------------------------
+# Un-Comment the following line if you are running remote pycharm.
+# Comment the following line if you are running normal pycharm
+# import matplotlib
+# matplotlib.use('TkAgg')
 
 from mpl_toolkits.mplot3d import Axes3D
 import matplotlib.pyplot as plt
