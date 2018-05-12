@@ -10,4 +10,20 @@ This files containes the sample statistics math code.
 
 This files containes the sample linear algebra math code.
 
+## Note:
+
+To activate sympy you need to excute the following command in the terminal
+
+```
+
+sudo pip2 install sympy
+
+````
+
+```
+
+sudo pip install sympy
+
+````
+
 
