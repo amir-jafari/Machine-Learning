@@ -12,18 +12,8 @@
 # --------------------------------------------Probablity ---------------------------------------------------------------
 # ----------------------------------------------------------------------------------------------------------------------
 
-# Q-1: Import packages that you can generate random numbers.
-import matplotlib.pyplot as plt
-import numpy as np
-import math
-import random
+# Q-1: Import packages that you need to generate random numbers.
 
-matrix1 = np.array([[1,2,3], [1,2,3],[1,2,3]])
-matrix2 = np.array([[1],[1],[1]])
-matrixmult = np.dot(matrix1, matrix2)
-logsig=1/(1+np.exp(-matrixmult))
-print(matrix2)
-print(logsig)
 
 
 # ----------------------------------------------------------------------------------------------------------------------
