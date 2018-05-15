@@ -14,33 +14,36 @@
 
 
 # ----------------------------------------------------------------------------------------------------------------------
-# Q-1: a)Generate a list of numbers (random or arbitary) and convert it to a numpy array.
+# Q-1: a)Generate a list of numbers (random or arbitrary) and convert it to a numpy array.
 
 
 
 
 # ----------------------------------------------------------------------------------------------------------------------
 
-# Q-1: b)Create 1x3, 3x3 and 5x5 size matrices. Use different python methods to generates these matrices that you know of (It can be random or manually enter numbers).
+# Q-1: b) Create 1x3, 3x3 and 5x5 size matrices. Use different python methods (commands) to generates these matrices
+# that you know of (It can be random or manually enter numbers).
 
 
 
 
 # ----------------------------------------------------------------------------------------------------------------------
-# Q-1: c) Multiply the first two matrix by the other elementwise and matrix multiplication if it is possible. Check your results by hand.
+# Q-1: c) Multiply the first two matrices elementwise and matrix multiplication, if it is possible. Check your results by hand.
 
 
 
 
 
 # ----------------------------------------------------------------------------------------------------------------------
-# Q-2: a) Create a matrix size of 3x3. Create a new varibale and name it var then add the first and second column of matrix then sum the the vector. Save the results in var.
+# Q-2: a) Create a matrix size of 3x3 (Randomly) and name it var1 . Create a new variable and name it var then add
+# the first and second column of var1 matrix then sum the the resulting vector. Save the results into var variable.
 
 
 
 
 # ----------------------------------------------------------------------------------------------------------------------
-# Q-2: b) Create a vector of 100 samples (with any python method that you have in your mind). Plot the vector. Calcuate the mean and std.
+# Q-2: b) Create a vector of 100 samples (with any python method (commands) that you have in your mind). Plot the vector.
+# Calculate the mean and std.
 
 
 
@@ -48,7 +51,8 @@
 # ----------------------------------------------------------------------------------------------------------------------
 # Q-2: c) Create a matrix 3x3 and 3x1. Multiply the first matrix by the second matrix.
 #         Define a logsig transfer function.
-#         Pass the results of the the multiplication to the transfer function (vector vize). Check does it make sense. Explain your results
+#         Pass the results of the the multiplication to the transfer function (vector vize). Check does it make sense.
+#         Explain your results
 
 
 
@@ -63,7 +67,7 @@
 
 
 # ----------------------------------------------------------------------------------------------------------------------
-# Q-3: c) Calulate the derivative of log(x) for x
+# Q-3: c) Calculate the derivative of log(x) for x
 
 
 
