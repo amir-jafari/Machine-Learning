@@ -1,10 +1,5 @@
 # Decision Tree
 
-* Lctures code
-
-* Sample Example and Exercise
-
-
 ## Guide
 
 * Graph viz (Ubuntu Installation)
