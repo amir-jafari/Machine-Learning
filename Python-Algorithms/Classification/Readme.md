@@ -4,12 +4,16 @@
 
 * Decision Tree
 
+* Random Forest
+
+* Support Vector Machine
+
 * K Nearest Neighbor
 
 * Logitic Regresion
 
 * Neural Network
 
-* Support Vector Machine
+
 
 

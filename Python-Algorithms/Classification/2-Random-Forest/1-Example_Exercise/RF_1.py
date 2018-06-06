@@ -1,11 +1,16 @@
-# %%-----------------------------------------------------------------------
+# %%%%%%%%%%%%% Machine Learning %%%%%%%%%%%%%%%%%%%%%%%%
+# %%%%%%%%%%%%% Authors  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+# Dr. Amir Jafari------>Email: amir.h.jafari@okstate.edu
+# Deepak Agarwal------>Email:deepakagarwal@gwmail.gwu.edu
+# %%%%%%%%%%%%% Date:
+# V1 June - 05 - 2018
+# %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+# %%%%%%%%%%%%% Random Forest  %%%%%%%%%%%%%%%%%%%%%%%%%%
+#%%-----------------------------------------------------------------------
 # Importing the required packages
-
-import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-from sklearn.preprocessing import Imputer
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import confusion_matrix
@@ -13,10 +18,11 @@ from sklearn.metrics import accuracy_score
 from sklearn.metrics import classification_report
 from sklearn.metrics import roc_auc_score
 
-# %%-----------------------------------------------------------------------
+
+#%%-----------------------------------------------------------------------
 # import Dataset
 # read data as panda dataframe
-data = pd.read_csv('titanic_data.csv', sep=',', header=0)
+data = pd.read_csv('breast_cancer_data.csv', sep=',', header=0)
 
 # printing the dataswet rows and columns
 print("Dataset No. of Rows: ", data.shape[0])
@@ -32,61 +38,33 @@ print(data.info())
 
 # printing the summary statistics of the dataset
 print(data.describe(include='all'))
-# %%-----------------------------------------------------------------------
+#%%-----------------------------------------------------------------------
 #clean the dataset
-
-# checking for null values
 print("Sum of NULL values in each column. ")
 print(data.isnull().sum())
 
 # drop unnnecessary columns
-data.drop(["PassengerId", "Name", "Ticket", "Cabin"], axis=1, inplace=True)
+data.drop(["id", "Unnamed: 32"], axis=1, inplace=True)
 
-# encode variable
-data["Embarked"] = data["Embarked"].map(dict(zip(("S", "C", "Q"), (0, 1, 2))))
-data["Sex"] = data["Sex"].map(dict(zip(("female", "male"), (0, 1))))
-
-# select rows where data is finite
-data = data[np.isfinite(data['Embarked'])]
-# %%-----------------------------------------------------------------------
+# encode target variable
+data['diagnosis'] = data['diagnosis'].map({'M': 1, 'B': 0})
+#%%-----------------------------------------------------------------------
 #split the dataset
 # separate the predictor and target variable
 X = data.values[:, 1:]
 Y = data.values[:, 0]
 
-# %%-----------------------------------------------------------------------
-# impute the missing values in dataset
-# specify imputer as median
-median_imputer = Imputer(missing_values='NaN', strategy='median', axis=0)
-
-# fit and transofrm the data
-X_trans = median_imputer.fit_transform(X)
-
-# check if there are still NA values left
-print("\n")
-print(np.isnan(X_trans).all())
-print("\n")
-
-# check if there are still infinite values left
-print(np.isfinite(X_trans).all())
-print("\n")
-# %%-----------------------------------------------------------------------
 # split the dataset into train and test
-X_train, X_test, y_train, y_test = train_test_split(X_trans, Y, test_size=0.3, random_state=100)
-
-
-# %%-----------------------------------------------------------------------
+X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.3, random_state=100)
+#%%-----------------------------------------------------------------------
 #perform training with random forest with all columns
-
 # specify random forest classifier
 clf = RandomForestClassifier(n_estimators=100)
 
 # perform training
 clf.fit(X_train, y_train)
-# %%-----------------------------------------------------------------------
-
+#%%-----------------------------------------------------------------------
 #plot feature importances
-
 # get feature importances
 importances = clf.feature_importances_
 
@@ -98,39 +76,36 @@ f_importances.sort_values(ascending=False, inplace=True)
 
 # make the bar Plot from f_importances
 f_importances.plot(x='Features', y='Importance', kind='bar', figsize=(16, 9), rot=90, fontsize=15)
+
 # show the plot
 plt.tight_layout()
+plt.show()
 
-
-# %%-----------------------------------------------------------------------
+#%%-----------------------------------------------------------------------
 #select features to perform training with random forest with k columns
-
-
 # select the training dataset on k-features
-newX_train = X_train[:, clf.feature_importances_.argsort()[::-1][:5]]
+newX_train = X_train[:, clf.feature_importances_.argsort()[::-1][:15]]
 
 # select the testing dataset on k-features
-newX_test = X_test[:, clf.feature_importances_.argsort()[::-1][:5]]
+newX_test = X_test[:, clf.feature_importances_.argsort()[::-1][:15]]
 
-# %%-----------------------------------------------------------------------
+#%%-----------------------------------------------------------------------
 #perform training with random forest with k columns
 # specify random forest classifier
 clf_k_features = RandomForestClassifier(n_estimators=100)
 
 # train the model
 clf_k_features.fit(newX_train, y_train)
-# %%-----------------------------------------------------------------------
+
+#%%-----------------------------------------------------------------------
 #make predictions
+
 # predicton on test using all features
 y_pred = clf.predict(X_test)
-
-
 y_pred_score = clf.predict_proba(X_test)
 
 # prediction on test using k features
 y_pred_k_features = clf_k_features.predict(newX_test)
-
-
 y_pred_k_features_score = clf_k_features.predict_proba(newX_test)
 
 
@@ -144,15 +119,12 @@ print("Classification Report: ")
 print(classification_report(y_test,y_pred))
 print("\n")
 
-
 print("Accuracy : ", accuracy_score(y_test, y_pred) * 100)
 print("\n")
-
 
 print("ROC_AUC : ", roc_auc_score(y_test,y_pred_score[:,1]) * 100)
 
 # calculate metrics entropy model
-
 print("\n")
 print("Results Using K features: \n")
 print("Classification Report: ")
@@ -164,9 +136,8 @@ print("ROC_AUC : ", roc_auc_score(y_test,y_pred_k_features_score[:,1]) * 100)
 
 # %%-----------------------------------------------------------------------
 # confusion matrix for gini model
-
 conf_matrix = confusion_matrix(y_test, y_pred)
-class_names = data['Survived'].unique()
+class_names = data['diagnosis'].unique()
 
 
 df_cm = pd.DataFrame(conf_matrix, index=class_names, columns=class_names )
@@ -182,11 +153,13 @@ plt.xlabel('Predicted label',fontsize=20)
 # Show heat map
 plt.tight_layout()
 
+
 # %%-----------------------------------------------------------------------
+
 # confusion matrix for entropy model
 
 conf_matrix = confusion_matrix(y_test, y_pred_k_features)
-class_names = data['Survived'].unique()
+class_names = data['diagnosis'].unique()
 
 
 df_cm = pd.DataFrame(conf_matrix, index=class_names, columns=class_names )
