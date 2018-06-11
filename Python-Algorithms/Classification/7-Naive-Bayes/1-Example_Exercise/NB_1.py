@@ -1,4 +1,13 @@
-# %%-----------------------------------------------------------------------
+# %%%%%%%%%%%%% Machine Learning %%%%%%%%%%%%%%%%%%%%%%%%
+# %%%%%%%%%%%%% Authors  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+# Dr. Amir Jafari------>Email: amir.h.jafari@okstate.edu
+# Deepak Agarwal------>Email:deepakagarwal@gwmail.gwu.edu
+# %%%%%%%%%%%%% Date:
+# V1 June - 11 - 2018
+# %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+# %%%%%%%%%%%%% Naive Bayes  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+#%%-----------------------------------------------------------------------
+
 # Importing the required packages
 
 import pandas as pd
@@ -13,7 +22,7 @@ import matplotlib.pyplot as plt
 import warnings
 warnings.filterwarnings("ignore")
 
-# %%-----------------------------------------------------------------------
+#%%-----------------------------------------------------------------------
 #importing Dataset
 
 # read data as panda dataframe
@@ -34,7 +43,7 @@ print(pima_data.info())
 # printing the summary statistics of the dataset
 print(pima_data.describe(include='all'))
 
-# %%-----------------------------------------------------------------------
+#%%-----------------------------------------------------------------------
 # split the dataset
 
 # separate the target variable
@@ -44,7 +53,7 @@ Y = pima_data.values[:, -1]
 # split the dataset into train and test
 X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.3, random_state=100)
 
-# %%-----------------------------------------------------------------------
+#%%-----------------------------------------------------------------------
 # perform training
 
 # creating the classifier object
@@ -53,7 +62,7 @@ clf = GaussianNB()
 # performing training
 clf.fit(X_train, y_train)
 
-# %%-----------------------------------------------------------------------
+#%%-----------------------------------------------------------------------
 # make predictions
 
 # predicton on test
@@ -61,7 +70,7 @@ y_pred = clf.predict(X_test)
 
 y_pred_score = clf.predict_proba(X_test)
 
-# %%-----------------------------------------------------------------------
+#%%-----------------------------------------------------------------------
 # calculate metrics
 
 print("\n")
@@ -77,7 +86,7 @@ print("\n")
 print("ROC_AUC : ", roc_auc_score(y_test,y_pred_score[:,1]) * 100)
 print("\n")
 
-# %%-----------------------------------------------------------------------
+#%%-----------------------------------------------------------------------
 # confusion matrix
 
 conf_matrix = confusion_matrix(y_test, y_pred)
