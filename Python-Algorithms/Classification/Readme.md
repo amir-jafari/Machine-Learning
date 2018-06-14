@@ -8,12 +8,13 @@
 
 * Support Vector Machine
 
-* K Nearest Neighbor
+* K-Nearest Neighbor
 
 * Logitic Regresion
 
 * Neural Network
 
+* Naive Bayes
 
 
 
