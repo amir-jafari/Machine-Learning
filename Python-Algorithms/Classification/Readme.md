@@ -16,5 +16,7 @@
 
 * Naive Bayes
 
+* Pre-Processing
+
 
 
