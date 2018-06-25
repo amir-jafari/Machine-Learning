@@ -20,6 +20,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import warnings
 warnings.filterwarnings("ignore")
+import sys
 #%%-----------------------------------------------------------------------
 import os
 os.environ["PATH"] += os.pathsep + 'C:/Program Files (x86)/Graphviz2.38/bin/'
@@ -29,6 +30,12 @@ os.environ["PATH"] += os.pathsep + 'C:/Program Files (x86)/Graphviz2.38/bin/'
 from pydotplus import graph_from_dot_data
 from sklearn.tree import export_graphviz
 import webbrowser
+#%%--------------------------------Save Console----------------------------
+
+# old_stdout = sys.stdout
+# log_file = open("console.txt", "w")
+# sys.stdout = log_file
+
 #%%-----------------------------------------------------------------------
 # importing Dataset
 
@@ -39,6 +46,8 @@ data = pd.read_csv('https://archive.ics.uci.edu/ml/machine-learning-databases/' 
 data.columns = ['Class_Name', 'Left-Weight', 'Left-Distance', 'Right-Weight', 'Right-Distance']
 
 # printing the dataset shape
+print ('-'*40 + 'Start Console' + '-'*40 + '\n')
+
 print("Dataset No. of Rows: ", data.shape[0])
 print("Dataset No. of Columns: ", data.shape[1])
 
@@ -46,13 +55,15 @@ print("Dataset No. of Columns: ", data.shape[1])
 print("Dataset first few rows:\n ")
 print(data.head())
 
+print ('-'*80 + '\n')
+
 # printing the struture of the dataset
 print("Dataset info:\n ")
 print(data.info())
-
+print ('-'*80 + '\n')
 # printing the summary statistics of the dataset
 print(data.describe(include='all'))
-
+print ('-'*80 + '\n')
 #%%-----------------------------------------------------------------------
 # split the dataset
 # separate the target variable
@@ -97,7 +108,7 @@ print(classification_report(y_test,y_pred_gini))
 print("\n")
 print("Accuracy : ", accuracy_score(y_test, y_pred_gini) * 100)
 print("\n")
-
+print ('-'*80 + '\n')
 # calculate metrics entropy model
 print("\n")
 print("Results Using Entropy: \n")
@@ -105,6 +116,7 @@ print("Classification Report: ")
 print(classification_report(y_test,y_pred_entropy))
 print("\n")
 print("Accuracy : ", accuracy_score(y_test, y_pred_entropy) * 100)
+print ('-'*80 + '\n')
 #%%-----------------------------------------------------------------------
 # confusion matrix for gini model
 conf_matrix = confusion_matrix(y_test, y_pred_gini)
@@ -153,3 +165,10 @@ graph = graph_from_dot_data(dot_data)
 graph.write_pdf("decision_tree_entropy.pdf")
 webbrowser.open_new(r'decision_tree_entropy.pdf')
 
+print ('-'*40 + 'End Console' + '-'*40 + '\n')
+#%%--------------------------------Save Console----------------------------
+
+# sys.stdout = old_stdout
+# log_file.close()
+
+#%%-----------------------------------------------------------------------
