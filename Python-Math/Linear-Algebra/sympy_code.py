@@ -16,8 +16,8 @@
 # ------------------------------------------------------------
 
 from sympy import *
-x = Symbol('x')
-y = Symbol('y')
+x = symbols('x')
+y = symbols('y')
 
 f1 = (x+y)**2
 print(f1)
