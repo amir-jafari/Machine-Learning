@@ -7,6 +7,38 @@
 # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 # %%%%%%%%%%%%% Decision Tree  %%%%%%%%%%%%%%%%%%%%%%%%%%
 #%%-----------------------------------------------------------------------
+#%%-----------------------------------------------------------------------
+# Exercise
+#%%-----------------------------------------------------------------------
+
+# 1:
+# Build the simple tennis table we just reviewed, in python as a dataframe. Label the columns.
+# We are going to calculate entropy manually, but in python.
+# Make sure to enter all variables as binary vs. the actual categorical names
+# Name the dataframe tennis_ex.
+#%%-----------------------------------------------------------------------
+
+
+
+
+#%%-----------------------------------------------------------------------
+# 2:
+# Build a function that will calculate entropy. Calculate entropy for the table we just went over
+# in the example, but in python
+# This is for the first split.
+#%%-----------------------------------------------------------------------
+
+
+
+
+
+
+
+
+#%%-----------------------------------------------------------------------
+# 3:
+# Run the decision tree algorithm and find out the best feature and graph it.
+#%%-----------------------------------------------------------------------
 # Importing the required packages
 import warnings
 warnings.filterwarnings("ignore")
@@ -34,7 +66,5 @@ import webbrowser
 tennis = pd.read_csv('tennis.csv')
 
 
-#%%-----------------------------------------------------------------------
-# Exercise
-#%%-----------------------------------------------------------------------
-# Run the decision tree algorithm and find out the best feature and graph it.
+
+
