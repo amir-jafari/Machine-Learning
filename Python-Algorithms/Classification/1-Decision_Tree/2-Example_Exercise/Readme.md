@@ -1,6 +1,10 @@
 
 ## Decision Tree Algorithm
 
+### Dataset - 0 :
+
+**1. Class Exercise**
+
 ### Dataset - 1 :
 
 **1. Balance Scale Weight & Distance Data**
