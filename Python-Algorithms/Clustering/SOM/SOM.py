@@ -2,6 +2,8 @@
 #%% Source: https://peterwittek.com/somoclu-in-python.html
 #%%--------------------------------------------------------------
 #%% Install https://pypi.org/project/somoclu/1.6.1/
+#%% for windows download the whl file and pip install it
+#%% for mac and ubuntu pip install somoclu or download the whl file
 #%%--------------------------------------------------------------
 
 import numpy as np
