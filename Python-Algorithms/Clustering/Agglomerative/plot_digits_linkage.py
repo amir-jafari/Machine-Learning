@@ -35,11 +35,11 @@ X, y = nudge_images(X, y)
 def plot_clustering(X_red, X, labels, title=None):
     x_min, x_max = np.min(X_red, axis=0), np.max(X_red, axis=0)
     X_red = (X_red - x_min) / (x_max - x_min)
-
+    cmap  = plt.cm.get_cmap("Spectral")
     plt.figure(figsize=(6, 4))
     for i in range(X_red.shape[0]):
         plt.text(X_red[i, 0], X_red[i, 1], str(y[i]),
-                 color=plt.cm.spectral(labels[i] / 10.),
+                 color=cmap(labels[i] / 10.),
                  fontdict={'weight': 'bold', 'size': 9})
 
     plt.xticks([])
