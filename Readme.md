@@ -4,7 +4,7 @@
 
 * Python scripts
 
-This files contains Python codes and installation manuals .
+This files contains Python codes and installation manuals.
 
 * R scripts
 
