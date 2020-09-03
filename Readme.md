@@ -2,15 +2,15 @@
 
 ## Getting Started 
 
-* Python scripts
+* Python scripts:
 
 This files contains Python codes and installation manuals.
 
-* R scripts
+* R scripts:
 
 This files contains R codes and installation manuals.
 
-* Matlab scripts
+* Matlab scripts:
 
 This files contains Matlab codes and installation manuals.
 
