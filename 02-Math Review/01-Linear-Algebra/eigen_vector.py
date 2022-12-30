@@ -14,6 +14,9 @@
 import numpy as np
 from scipy import linalg
 import matplotlib.pyplot as plt
+
+
+
 # --------------------------------------Inverse--------------------------------------------------------------------------
 a = np.array([[1, 0],
               [0, 4]])
