@@ -3,8 +3,12 @@ class AdalineGD(object):
     def __init__(self, eta=0.01, n_iter=50):
         self.eta = eta
         self.n_iter = n_iter
-
     # this is a different way to learn the weights
+
+
+
+
+
     def fit(self, X, y):
         self.w_ = np.zeros(1 + X.shape[1])
         self.cost_ = []
