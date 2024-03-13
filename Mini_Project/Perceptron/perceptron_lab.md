@@ -26,6 +26,10 @@ classifies all the training examples.
 A scatter plot is then drawn to visualize the classification. 
 The decision boundary separates 'Rabbit' and 'Bear' inputs.
 
+## Extra Tasks 
+- Find the best decision boundary.
+- Plot errors and find the best stopping criteria.
+
 ## Commitment
 
 We believe this lab will be an exciting opportunity to learn first learning rule.
