@@ -20,6 +20,6 @@ In instances where you are required to complete the TODO tasks, sufficient infor
 If you need to add additional cells, you can utilize the `Insert` menu located at the top of the page.
 
 ## Commitment
-We believe this lab will be an exciting opportunity to interactively learn and practice Python in the context of deep learning. Hence, we encourage asking questions, experimenting with code, and in-depth exploration!
+We believe this lab will be an exciting opportunity to interactively learn and practice Python in the context of machine learning. Hence, we encourage asking questions, experimenting with code, and in-depth exploration!
 
 Please ensure to solve all the 'TO DO' tasks assigned in the notebook for complete learning.
