@@ -48,6 +48,6 @@ use several different initial conditions. Discuss the convergence properties of 
 the learning rate changes.
 - Plot the trained networks with the network outputs. Compare them.
 - Plot squared error for each epochs.
-- Implement Stochastic gradient approach and repeat part i and ii.
-- Implement Batch approach (True Gradient) and repeat part i and ii.
+- Implement Stochastic gradient approach.
+- Implement Batch approach (True Gradient).
 - Write your code in a format that you can enter any number of neurons in hidden layer.
