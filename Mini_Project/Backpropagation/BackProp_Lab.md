@@ -22,7 +22,7 @@ This process will be reiterated for different configurations of model parameters
 neurons and learning rate, to better understand their impact on the model performance.
 
 The Python code snippet given above is the implementation of this objective where the backpropagation 
-algorithm is encapsulated within the 'SGD' function in 'models_sol'.
+algorithm is encapsulated within the 'SGD' function in 'models.py'.
 
 This exercise will provide the student with practical experience in implementing neural networks, 
 understanding the backpropagation algorithm, and learning about stochastic gradient descent optimization. 
