@@ -1,24 +1,6 @@
-# %%%%%%%%%%%%% Python %%%%%%%%%%%%%%%%%%%%%%%%%%%
-# %%%%%%%%%%%%% Authors  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-# Dr. Martin Hagan----->Email: mhagan@okstate.edu
-# Dr. Amir Jafari------>Email: amir.h.jafari@okstate.edu
-# %%%%%%%%%%%%% Date:
-# V1 Jan - 04 - 2018
-# %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-# %%%%%%%%%%%%% Math Python %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-# =============================================================
-# ------------------------------------------------------------
-# -----------------------Probablity --------------------------
-# ------------------------------------------------------------
-
-# Un-Comment the following line if you are running remote pycharm.
-# Comment the following line if you are running normal pycharm
-# import matplotlib
-# matplotlib.use('TkAgg')
-
-
 import matplotlib.pyplot as plt
 import random
+import numpy as np
 # ------------------------------------------------------------
 random_number = random.random()
 print(random_number)
@@ -37,7 +19,7 @@ print(random_number)
 outcome = random.randint(1, 6)
 print(outcome)
 # ------------------------------------------------------------
-import numpy as np
+
 a = np.random.random(1000)
 
 
@@ -64,7 +46,4 @@ plt.plot(a)
 s1 = np.random.randn(1000)
 plt.figure(5)
 plt.hist(s1)
-
-
-
 plt.show()
