@@ -1,7 +1,49 @@
 from numpy.random import seed
 import numpy as np
 class AdalineSGD(object):
-    # initialize the parameters
+    """
+    AdalineSGD
+
+    This class implements the Adaptive Linear Neuron (Adaline) algorithm using the Stochastic Gradient Descent (SGD) optimization technique. Adaline is a single-layer neural network that
+    * can be used for binary classification tasks. The SGD optimization updates the model parameters by randomly selecting samples from the training set and adjusting the weights based on
+    * the differences between the predicted and actual outputs.
+
+    Attributes:
+    - eta (float): The learning rate (default=0.01).
+    - n_iter (int): The number of iterations (epochs) to train the model (default=10).
+    - shuffle (bool): Whether to shuffle the training data before each epoch (default=True).
+    - random_state (int): The seed value for random number generation (default=None).
+
+    Methods:
+    - __init__(self, eta=0.01, n_iter=10, shuffle=True, random_state=None)
+        Initializes the AdalineSGD object with the given parameters.
+
+    - fit(self, X, y)
+        Trains the AdalineSGD model using the input features (X) and target values (y).
+
+    - partial_fit(self, X, y)
+        Updates the weights of an already trained AdalineSGD model using additional input features (X) and target values (y).
+
+    - _shuffle(self, X, y)
+        Shuffles the input features (X) and target values (y) randomly.
+
+    - _initialize_weights(self, m)
+        Initializes the model weights to zeros.
+
+    - _update_weights(self, xi, target)
+        Updates the model weights using the input sample (xi) and corresponding target value (target).
+
+    - net_input(self, X)
+        Calculates the net input (weighted sum) of the input features (X) using the model weights.
+
+    - activation(self, X)
+        Calculates the output (activation) of the AdalineSGD model for the input features (X).
+
+    - predict(self, X)
+        Predicts the class labels for the input features (X) based on the AdalineSGD model.
+
+    Note: This class requires the NumPy library to work properly.
+    """
     def __init__(self, eta=0.01, n_iter=10,shuffle=True, random_state=None):
         self.eta = eta
         self.n_iter = n_iter
@@ -24,7 +66,7 @@ class AdalineSGD(object):
         return self
 
     def partial_fit(self, X, y):
-        """Fit training data without reinitializing the weights"""
+
         if not self.w_initialized:
             self._initialize_weights(X.shape[1])
         if y.ravel().shape[0] > 1:
@@ -39,12 +81,10 @@ class AdalineSGD(object):
         return X[r], y[r]
 
     def _initialize_weights(self, m):
-        """Initialize weights to zeros"""
         self.w_ = np.zeros(1 + m)
         self.w_initialized = True
 
     def _update_weights(self, xi, target):
-        """Apply Adaline learning rule to update the weights"""
         output = self.net_input(xi)
         error = (target - output)
         self.w_[1:] += self.eta * xi.dot(error)
@@ -52,11 +92,9 @@ class AdalineSGD(object):
         cost = 0.5 * error ** 2
         return cost
     def net_input(self, X):
-        """Calculate net input"""
         return np.dot(X, self.w_[1:]) + self.w_[0]
     def activation(self, X):
-        """Compute linear activation"""
         return self.net_input(X)
     def predict(self, X):
-        """Return class label after unit step"""
+
         return np.where(self.activation(X) >= 0.0, 1, -1)
