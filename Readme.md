@@ -26,7 +26,7 @@
 
 
 
-This is a repo that has most updated fundamental of NLP  needed to implement to build a practical solutions. 
+This is a repo that has most updated fundamental of Machine Learning  needed to implement to build a practical solutions. 
 
 
 # 💻 Tech Stack:
