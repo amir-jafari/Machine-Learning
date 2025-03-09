@@ -1,4 +1,4 @@
-# Understanding Why y = 2x + 1 is Affine but Not Linear
+# Understanding Why $y = 2x + 1$ is Affine but Not Linear
 
 ## **Mathematical Explanation**
 A function is **linear** if it satisfies both:
