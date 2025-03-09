@@ -3,8 +3,10 @@
 ## **Mathematical Explanation**
 A function is **linear** if it satisfies both:
 
-1. **Additivity**: $ f(x_{1} + x_2) = f(x_1) + f(x_2) $
-2. **Homogeneity** (or scalar multiplication): $ f(\lambda x) = \lambda f(x) $ for any scalar $ \lambda $.
+1. **Additivity**: 
+$f(x_{1} + x_2) = f(x_1) + f(x_2)$
+2. **Homogeneity** (or scalar multiplication): 
+$ f(\lambda x) = \lambda f(x) $ for any scalar $ \lambda $.
 
 ### **Step 1: Checking Additivity**
 
