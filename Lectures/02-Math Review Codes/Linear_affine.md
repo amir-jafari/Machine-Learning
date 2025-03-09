@@ -18,7 +18,7 @@ On the other hand,
 $(x_1) + f(x_2) = (2x_1 + 1) + (2x_2 + 1) = 2x_1 + 2x_2 + 2$
 
 
-Since \( f(x_1 + x_2) \neq f(x_1) + f(x_2) \) (there is an extra \( +1 \) term), additivity does not hold.
+Since $( f(x_1 + x_2) \neq f(x_1) + f(x_2) )$ (there is an extra \( +1 \) term), additivity does not hold.
 
 ### **Step 2: Checking Homogeneity**
 For a scalar $( \lambda )$:
